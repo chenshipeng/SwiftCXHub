@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.Git'
+platform:ios,'14.0'
+use_frameworks!
+target 'SwiftCXHub (iOS)' do 
+pod 'Alamofire'
+pod 'SwifterSwift'
+pod 'SwiftyJSON'
+pod 'KeychainAccess'
+pod 'Kingfisher/SwiftUI'
+end
