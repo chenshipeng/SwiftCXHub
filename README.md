@@ -1,5 +1,5 @@
 # SwiftCXHub
-Sample iOS project built by SwiftUI and Combine framework using GitHub API
+Sample iOS and macOS project built by SwiftUI and Combine framework using GitHub API
 
 I already done the events part.
 
