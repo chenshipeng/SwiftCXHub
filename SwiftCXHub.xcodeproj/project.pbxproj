@@ -15,6 +15,7 @@
 		9C20A71224EF6D8C003F737F /* AvatarAndDesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20A71124EF6D8C003F737F /* AvatarAndDesCell.swift */; };
 		9C20A71424EFA9F6003F737F /* OwnerHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20A71324EFA9F6003F737F /* OwnerHomePage.swift */; };
 		9C20A71824EFAD9C003F737F /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20A71724EFAD9C003F737F /* UserHeader.swift */; };
+		9C4044DD25023B5A003F7C7C /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4044DC25023B5A003F7C7C /* Trending.swift */; };
 		9C5898CF24F74C9300AFB43D /* OrgListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5898CE24F74C9300AFB43D /* OrgListPage.swift */; };
 		9C5898D124F74CED00AFB43D /* RepoListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5898D024F74CED00AFB43D /* RepoListPage.swift */; };
 		9C602FBE24FDF65300FD95C4 /* VerticalNumberAndStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C602FBD24FDF65300FD95C4 /* VerticalNumberAndStringView.swift */; };
@@ -35,6 +36,7 @@
 		9C87F44024E52A580057A279 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87F43F24E52A580057A279 /* AuthClient.swift */; };
 		9C8D137624DB997E00C2A597 /* SwiftCXHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D136324DB997D00C2A597 /* SwiftCXHubApp.swift */; };
 		9C8D137A24DB997E00C2A597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D136524DB997E00C2A597 /* Assets.xcassets */; };
+		9C9E59852501D78200495DCB /* DiscoverListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E59842501D78200495DCB /* DiscoverListPage.swift */; };
 		9CB1230624F6530200AA2E41 /* RepoEventsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1230524F6530200AA2E41 /* RepoEventsListPage.swift */; };
 		9CB1230824F6531000AA2E41 /* UserEventsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1230724F6531000AA2E41 /* UserEventsListPage.swift */; };
 		9CF3A48D24E624B10025AEBE /* CurrentUserReceivedEventsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3A48C24E624B10025AEBE /* CurrentUserReceivedEventsListPage.swift */; };
@@ -77,6 +79,7 @@
 		9C20A71124EF6D8C003F737F /* AvatarAndDesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAndDesCell.swift; sourceTree = "<group>"; };
 		9C20A71324EFA9F6003F737F /* OwnerHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerHomePage.swift; sourceTree = "<group>"; };
 		9C20A71724EFAD9C003F737F /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
+		9C4044DC25023B5A003F7C7C /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		9C5898CE24F74C9300AFB43D /* OrgListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgListPage.swift; sourceTree = "<group>"; };
 		9C5898D024F74CED00AFB43D /* RepoListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPage.swift; sourceTree = "<group>"; };
 		9C602FBD24FDF65300FD95C4 /* VerticalNumberAndStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalNumberAndStringView.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		9C8D136524DB997E00C2A597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C8D136A24DB997E00C2A597 /* SwiftCXHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCXHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8D136D24DB997E00C2A597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C9E59842501D78200495DCB /* DiscoverListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverListPage.swift; sourceTree = "<group>"; };
 		9CB1230524F6530200AA2E41 /* RepoEventsListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoEventsListPage.swift; sourceTree = "<group>"; };
 		9CB1230724F6531000AA2E41 /* UserEventsListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEventsListPage.swift; sourceTree = "<group>"; };
 		9CF3A48C24E624B10025AEBE /* CurrentUserReceivedEventsListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserReceivedEventsListPage.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				9CF3A49324E677F70025AEBE /* InnerCommit.swift */,
 				9CF3A4A724E677F80025AEBE /* Issue.swift */,
 				9CF3A49C24E677F80025AEBE /* License.swift */,
+				9C4044DC25023B5A003F7C7C /* Trending.swift */,
 				9CF3A49E24E677F80025AEBE /* Links.swift */,
 				9CF3A49424E677F70025AEBE /* Member.swift */,
 				9CF3A4A224E677F80025AEBE /* Org.swift */,
@@ -270,10 +275,19 @@
 		9C8D139124DBB0BA00C2A597 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				9C9E59832501D76900495DCB /* Discovery */,
 				9C87F42824E3819B0057A279 /* Login */,
 				9CF3A48E24E624BA0025AEBE /* HomeTab */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9C9E59832501D76900495DCB /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E59842501D78200495DCB /* DiscoverListPage.swift */,
+			);
+			path = Discovery;
 			sourceTree = "<group>";
 		};
 		9CF3A48E24E624BA0025AEBE /* HomeTab */ = {
@@ -434,6 +448,7 @@
 				9CF3A4A924E677F80025AEBE /* Verification.swift in Sources */,
 				9CF3A4B924E677F80025AEBE /* Org.swift in Sources */,
 				9C602FC824FF2D5300FD95C4 /* RepoIssuesPage.swift in Sources */,
+				9C4044DD25023B5A003F7C7C /* Trending.swift in Sources */,
 				9C20A70E24EF6BA1003F737F /* RepoHeader.swift in Sources */,
 				9C87F42324E37FB30057A279 /* API.swift in Sources */,
 				9CF3A4B224E677F80025AEBE /* Committer.swift in Sources */,
@@ -473,6 +488,7 @@
 				9CF3A4B524E677F80025AEBE /* Links.swift in Sources */,
 				9CF3A49024E62B650025AEBE /* UIState.swift in Sources */,
 				9C8D137624DB997E00C2A597 /* SwiftCXHubApp.swift in Sources */,
+				9C9E59852501D78200495DCB /* DiscoverListPage.swift in Sources */,
 				9CB1230624F6530200AA2E41 /* RepoEventsListPage.swift in Sources */,
 				9C87F43824E38CC30057A279 /* User+API.swift in Sources */,
 				9CF3A4B424E677F80025AEBE /* Author.swift in Sources */,

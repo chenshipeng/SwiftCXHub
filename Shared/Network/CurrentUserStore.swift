@@ -11,12 +11,13 @@ import SwiftUI
 import Alamofire
 class CurrentUserStore: ObservableObject,PersistentDataStore {
     public static let shared = CurrentUserStore()
-
+    @Published public var language:[String] = ["all languages","javascript","java","php","ruby","python","css","cpp","c","objective-c","swift","shell","r","perl","lua","html","scala","go"]
     @Published var users:[String:User] = [:]
     @Published public var username:String = ""
     @Published public var usersFollowed:[String:Bool] = [:]
     @Published public var followers:[String:[Owner]] = [:]
     @Published public var followings:[String:[Owner]] = [:]
+    @Published public var trendings:[String:[Trending]] = [:]
     struct UserStoreModel:Codable {
         var user:User?
         var userEvents:[String:[UserEvent]]?
@@ -221,6 +222,19 @@ class CurrentUserStore: ObservableObject,PersistentDataStore {
                 }
             }, receiveValue: {owners in
                 self.followings[login] = owners
+            })
+        disposeBag.append(cancellable)
+    }
+    func trending(lan:String,type:DiscoveryTypes){
+        let cancellable = User.trendings(lan: lan, type: type)
+            .sink(receiveCompletion: {result in
+                if case .failure(let err) = result{
+                    print("trending error is \(err)")
+                }else{
+                    print("trending finished")
+                }
+            }, receiveValue: {datas in
+                self.trendings[lan + type.rawValue] = datas
             })
         disposeBag.append(cancellable)
     }

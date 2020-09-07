@@ -45,7 +45,22 @@ public class API {
             .eraseToAnyPublisher()
     }
     public func request<T:Codable>(url:String,httpMethod:HTTPMethod = .post,params:[String:Any]?) -> AnyPublisher<T,AFError>{
+        print("headers are \(String(describing: self.headers)),url is \(url)")
+
         return AF.request(URL(string: url)!,method: httpMethod,parameters: params, encoding: httpMethod == HTTPMethod.post ? JSONEncoding.default : URLEncoding.queryString,headers: self.headers)
+            .responseJSON{json in
+                switch json.result{
+                case .success(let json):
+                    print("json is \(json)")
+                case .failure(let error):
+                    print("error is \(error),code \(String(describing: error.responseCode))")
+                }
+            }
+            .publishDecodable(type: T.self,decoder: decoder).value()
+            .eraseToAnyPublisher()
+    }
+    public func requestOut<T:Codable>(url:String,httpMethod:HTTPMethod = .post,params:[String:Any]?) -> AnyPublisher<T,AFError>{
+        return AF.request(URL(string: url)!,method: httpMethod,parameters: params, encoding: httpMethod == HTTPMethod.post ? JSONEncoding.default : URLEncoding.queryString,headers: nil)
             .responseJSON{json in
                 switch json.result{
                 case .success(let json):

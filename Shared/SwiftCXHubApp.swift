@@ -28,6 +28,7 @@ struct SwiftCXHubApp: App {
 struct TabbarView:View {
     enum Tab:Int {
         case hometab
+        case discovery
     }
     @State var selectedTab = Tab.hometab
     @EnvironmentObject var uistate:UIState
@@ -41,12 +42,25 @@ struct TabbarView:View {
         //这里使用Zstack是为了显示其他的内容，比如完整的提示
         ZStack(alignment: .center){
             TabView(selection:$selectedTab){
-                CurrentUserReceivedEventsListPage().tabItem{
+                CurrentUserReceivedEventsListPage()
+                    .tabItem{
                     self.tabbarItem(text: "Events", image: "list.bullet.rectangle")
                 }
                 .tag(Tab.hometab)
+                
+                DiscoverListPage()
+                    .tabItem {
+                        self.tabbarItem(text: "Discovery", image: "flame")
+                        
+                    }
+                    .tag(Tab.discovery)
+                    
             }
-            .accentColor(.primary)
+            
+            
+        }
+            
+        .accentColor(.primary)
             
             if let toast = uistate.toast,toast.0{
                 Text(toast.1)
@@ -59,4 +73,4 @@ struct TabbarView:View {
             }
         }
     }
-}
+

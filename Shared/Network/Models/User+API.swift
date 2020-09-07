@@ -50,4 +50,7 @@ extension User{
     static public func followings(userLogin:String) -> AnyPublisher<[Owner],AFError>{
         return API.shared.request(endpoint: UserEndpoint.followings(userLogin: userLogin), params: nil)
     }
+    static public func trendings(lan:String,type:DiscoveryTypes) -> AnyPublisher<[Trending],AFError>{
+        return API.shared.requestOut(url: "https://ghapi.huchen.dev/repositories?language=\(lan)&since=\(type.rawValue)",httpMethod: .get, params: nil)
+    }
 }
