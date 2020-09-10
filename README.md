@@ -13,14 +13,17 @@ I already done the events part.
 ## Snapshots
 <table>
     <tr>
-        <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/1599035764165.jpg" ></center></td>
-         <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/1599035790007.jpg" ></center></td>
-    </tr>
-</table>
-<table>
-    <tr>
+        <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-09-10%20at%2016.25.18.png" ></center></td>
         <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-09-02%20at%2016.34.54.png" ></center></td>
          <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-09-02%20at%2016.35.27.png" ></center></td>
       <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-09-02%20at%2016.35.38.png" ></center></td>
     </tr>
 </table>
+
+<table>
+    <tr>
+        <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/1599035764165.jpg" ></center></td>
+         <td ><center><img src="https://github.com/chenshipeng/SwiftCXHub/blob/master/swiftcxhub_snap/1599035790007.jpg" ></center></td>
+    </tr>
+</table>
+
