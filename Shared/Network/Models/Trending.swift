@@ -36,7 +36,7 @@ public struct Trending: Codable,Identifiable,Hashable {
     var full_name: String?
     var fork: Bool?
     var description: String?
-    var license: License?
+//    var license: License?
     var notifications_url: String?
     var ssh_url: String?
     var stargazers_count: String?
@@ -69,7 +69,7 @@ public struct Trending: Codable,Identifiable,Hashable {
     var pushed_at: String?
     var contents_url: String?
     var statuses_url: String?
-    var owner: Owner?
+//    var owner: Owner?
     var git_refs_url: String?
     var stargazers_url: String?
     var name: String?
@@ -82,7 +82,7 @@ public struct Trending: Codable,Identifiable,Hashable {
     var git_commits_url: String?
     var commits_url: String?
     var watchers_count: String?
-    var organization: Owner?
+//    var organization: Owner?
     var deployments_url: String?
     var merges_url: String?
     var node_id: String?
@@ -92,6 +92,21 @@ public struct Trending: Codable,Identifiable,Hashable {
     }
     public func hash(into hasher: inout Hasher) {
         
+    }
+}
+extension Trending{
+    static func staticTrending()->Trending{
+        var trending = Trending()
+        trending.name = "AltStore"
+        trending.description = "AltStore is an alternative app store for non-jailbroken iOS devices."
+        trending.url = "https://github.com/rileytestut/AltStore"
+        trending.stars = 3036
+        trending.languageColor = "#ffac45"
+        trending.forks = 273
+        trending.language = "Swift"
+        trending.avatar = "https://github.com/rileytestut.png"
+        trending.author = "rileytestut"
+        return trending
     }
 }
 public struct BuiltBy:Codable{

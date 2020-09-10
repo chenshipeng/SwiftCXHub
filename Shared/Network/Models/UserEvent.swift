@@ -11,7 +11,6 @@
 import Foundation
 import SwiftUI
 import Combine
-import Alamofire
 public struct UserEvent: Codable,Identifiable {
     var repo: Repo?
     public var id: String?

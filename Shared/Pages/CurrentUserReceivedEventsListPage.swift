@@ -40,7 +40,7 @@ struct CurrentUserReceivedEventsListPage: View {
     @EnvironmentObject var auth:AuthClient
     @EnvironmentObject var currentUser:CurrentUserStore
     
-    
+    @State var repoDetailActive = false
     var body: some View {
         NavigationView{
             ZStack{

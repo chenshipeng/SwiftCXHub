@@ -11,7 +11,8 @@ import Combine
 import Alamofire
 public class RepoManager: ObservableObject,PersistentDataStore {
     public static let shared = RepoManager()
-    @Published public var repoDetails:[String:Repo] = [:]{
+    @Published public var repoDetails:[String:Repo] = [:]
+    {
         didSet{
             let repoData = RepoData(repoDetails: repoDetails, repoStarred: repoStarred,repoEvents: repoEvents)
             persistData(data: repoData)

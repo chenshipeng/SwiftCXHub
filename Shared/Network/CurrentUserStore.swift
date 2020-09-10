@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 import Alamofire
-class CurrentUserStore: ObservableObject,PersistentDataStore {
+class CurrentUserStore: ObservableObject,AppGroupShareDataStore {
     public static let shared = CurrentUserStore()
     @Published public var language:[String] = ["all languages","javascript","java","php","ruby","python","css","cpp","c","objective-c","swift","shell","r","perl","lua","html","scala","go"]
     @Published var users:[String:User] = [:]
@@ -17,19 +17,19 @@ class CurrentUserStore: ObservableObject,PersistentDataStore {
     @Published public var usersFollowed:[String:Bool] = [:]
     @Published public var followers:[String:[Owner]] = [:]
     @Published public var followings:[String:[Owner]] = [:]
-    @Published public var trendings:[String:[Trending]] = [:]
-    struct UserStoreModel:Codable {
-        var user:User?
-        var userEvents:[String:[UserEvent]]?
-        var orgList:[String:[Org]]?
-        var repos:[String:[Repo]]?
-    }
-    let persistentedDataFileName: String = "UserData"
+//    struct UserStoreModel:Codable {
+//        var user:User?
+//        var userEvents:[String:[UserEvent]]?
+//        var orgList:[String:[Org]]?
+//        var repos:[String:[Repo]]?
+//        var trendings:[String:[Trending]]?
+//    }
+    let persistentedDataFileName: String = "group.csp.SwiftCXhub.com"
     typealias DataType = UserStoreModel?
     
     private var disposeBag:[AnyCancellable] = []
     private func persist(){
-        let userStoreModel = UserStoreModel(user: currentUser, userEvents: userEvents,orgList: orgList,repos: repos)
+        let userStoreModel = UserStoreModel(user: currentUser, userEvents: userEvents,orgList: orgList,repos: repos,trendings: trendings)
         persistData(data: userStoreModel)
     }
     @Published public var currentUser:User?{
@@ -55,6 +55,11 @@ class CurrentUserStore: ObservableObject,PersistentDataStore {
             persist()
         }
     }
+    @Published public var trendings:[String:[Trending]] = [:]{
+        didSet{
+            persist()
+        }
+    }
     init() {
         /// 从内存中获取user信息
         if let data = getPersistData(){
@@ -63,6 +68,7 @@ class CurrentUserStore: ObservableObject,PersistentDataStore {
             self.userEvents = data?.userEvents ?? [:]
             self.orgList = data?.orgList ?? [:]
             self.repos = data?.repos ?? [:]
+            self.trendings = data?.trendings ?? [:]
         }
         let cancellable =  AuthClient.shared.$authStatus.combineLatest(AuthClient.shared.$headers).sink{
             switch $0.0{
