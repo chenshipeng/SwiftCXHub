@@ -29,6 +29,7 @@ struct TabbarView:View {
     enum Tab:Int {
         case hometab
         case discovery
+        case repos
     }
     @State var selectedTab = Tab.hometab
     @EnvironmentObject var uistate:UIState
@@ -54,6 +55,11 @@ struct TabbarView:View {
                         
                     }
                     .tag(Tab.discovery)
+                MyRepoListPage()
+                    .tabItem {
+                        self.tabbarItem(text: "Repos", image: "tray.circle")
+                    }
+                    .tag(Tab.repos)
                     
             }
             

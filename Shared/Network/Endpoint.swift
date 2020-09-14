@@ -42,6 +42,7 @@ enum UserEndpoint:Endpoint {
     case repos(userLogin:String)
     case followers(userLogin:String)
     case followings(userLogin:String)
+    case myRepos(selfLogin:String)
     func path() -> String {
         switch self {
         case .myInfo:
@@ -66,6 +67,8 @@ enum UserEndpoint:Endpoint {
             return "/users/\(userLogin)/followers"
         case .followings(let userLogin):
             return "/users/\(userLogin)/folowing"
+        case .myRepos(let selfLogin):
+            return "/users/\(selfLogin)/repos"
         }
     }
 }

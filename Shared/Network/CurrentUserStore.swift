@@ -17,13 +17,7 @@ class CurrentUserStore: ObservableObject,AppGroupShareDataStore {
     @Published public var usersFollowed:[String:Bool] = [:]
     @Published public var followers:[String:[Owner]] = [:]
     @Published public var followings:[String:[Owner]] = [:]
-//    struct UserStoreModel:Codable {
-//        var user:User?
-//        var userEvents:[String:[UserEvent]]?
-//        var orgList:[String:[Org]]?
-//        var repos:[String:[Repo]]?
-//        var trendings:[String:[Trending]]?
-//    }
+    @Published public var myRepos:[Repo] = []
     let persistentedDataFileName: String = "group.csp.SwiftCXhub.com"
     typealias DataType = UserStoreModel?
     
@@ -243,5 +237,21 @@ class CurrentUserStore: ObservableObject,AppGroupShareDataStore {
                 self.trendings[lan + type.rawValue] = datas
             })
         disposeBag.append(cancellable)
+    }
+    func getMyRepos(){
+        if self.username.count > 0 {
+            let cancelleble = User.myRepos(selfLogin: self.username)
+                .sink(receiveCompletion: {result in
+                    if case .failure(let err) = result{
+                        print("myRepos error is \(err)")
+                    }else{
+                        print("myRepos finished")
+                    }
+                }) { repos in
+                    self.myRepos = repos
+                }
+            disposeBag.append(cancelleble)
+        }
+        
     }
 }
