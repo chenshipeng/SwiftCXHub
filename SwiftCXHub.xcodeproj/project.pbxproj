@@ -66,6 +66,8 @@
 		9C8D137624DB997E00C2A597 /* SwiftCXHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D136324DB997D00C2A597 /* SwiftCXHubApp.swift */; };
 		9C8D137A24DB997E00C2A597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D136524DB997E00C2A597 /* Assets.xcassets */; };
 		9C9E59852501D78200495DCB /* DiscoverListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E59842501D78200495DCB /* DiscoverListPage.swift */; };
+		9C9ED61925145FEF00524164 /* MyProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9ED61825145FEF00524164 /* MyProfilePage.swift */; };
+		9CA7AE7D25148E0C009DAD50 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7AE7C25148E0C009DAD50 /* SafariView.swift */; };
 		9CA8B05C2509CBF0001D50C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA8B05B2509CBF0001D50C9 /* Foundation.framework */; };
 		9CB1230624F6530200AA2E41 /* RepoEventsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1230524F6530200AA2E41 /* RepoEventsListPage.swift */; };
 		9CB1230824F6531000AA2E41 /* UserEventsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1230724F6531000AA2E41 /* UserEventsListPage.swift */; };
@@ -171,6 +173,8 @@
 		9C8D136A24DB997E00C2A597 /* SwiftCXHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCXHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8D136D24DB997E00C2A597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9E59842501D78200495DCB /* DiscoverListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverListPage.swift; sourceTree = "<group>"; };
+		9C9ED61825145FEF00524164 /* MyProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePage.swift; sourceTree = "<group>"; };
+		9CA7AE7C25148E0C009DAD50 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		9CA8B0592509CB16001D50C9 /* LargeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidget.swift; sourceTree = "<group>"; };
 		9CA8B05B2509CBF0001D50C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CB1230524F6530200AA2E41 /* RepoEventsListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoEventsListPage.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 		9C8D139124DBB0BA00C2A597 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				9C9ED61725145FD700524164 /* MyProfile */,
 				9C45C8DA250F51E1003E65C4 /* Repositories */,
 				9C9E59832501D76900495DCB /* Discovery */,
 				9C87F42824E3819B0057A279 /* Login */,
@@ -406,6 +411,15 @@
 				9C9E59842501D78200495DCB /* DiscoverListPage.swift */,
 			);
 			path = Discovery;
+			sourceTree = "<group>";
+		};
+		9C9ED61725145FD700524164 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9CA7AE7C25148E0C009DAD50 /* SafariView.swift */,
+				9C9ED61825145FEF00524164 /* MyProfilePage.swift */,
+			);
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		9CE5EBA825061C7E0047257F /* SwiftCXHubWidgetExtension */ = {
@@ -614,6 +628,7 @@
 				9C4044DD25023B5A003F7C7C /* Trending.swift in Sources */,
 				9C20A70E24EF6BA1003F737F /* RepoHeader.swift in Sources */,
 				9C87F42324E37FB30057A279 /* API.swift in Sources */,
+				9C9ED61925145FEF00524164 /* MyProfilePage.swift in Sources */,
 				9CF3A4B224E677F80025AEBE /* Committer.swift in Sources */,
 				9C87F42E24E3857A0057A279 /* PersistentDataStore.swift in Sources */,
 				9CF3A4E624ED13830025AEBE /* RowLoadingView.swift in Sources */,
@@ -634,6 +649,7 @@
 				9C87F42624E380410057A279 /* Endpoint.swift in Sources */,
 				9C87F42A24E381AE0057A279 /* LoginPage.swift in Sources */,
 				9CF3A4BB24E677F80025AEBE /* Actor.swift in Sources */,
+				9CA7AE7D25148E0C009DAD50 /* SafariView.swift in Sources */,
 				9C20A71224EF6D8C003F737F /* AvatarAndDesCell.swift in Sources */,
 				9C20A71024EF6C0A003F737F /* SectionHeader.swift in Sources */,
 				9CF3A4B124E677F80025AEBE /* PullRequest.swift in Sources */,

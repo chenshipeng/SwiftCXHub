@@ -30,6 +30,7 @@ struct TabbarView:View {
         case hometab
         case discovery
         case repos
+        case profile
     }
     @State var selectedTab = Tab.hometab
     @EnvironmentObject var uistate:UIState
@@ -60,6 +61,11 @@ struct TabbarView:View {
                         self.tabbarItem(text: "Repos", image: "tray.circle")
                     }
                     .tag(Tab.repos)
+                MyProfilePage()
+                    .tabItem {
+                        self.tabbarItem(text: "About Me", image: "person.circle")
+                    }
+                    .tag(Tab.profile)
                     
             }
             
