@@ -76,8 +76,6 @@
 		9CE5EBA725061C7E0047257F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE5EBA625061C7E0047257F /* SwiftUI.framework */; };
 		9CE5EBAA25061C7E0047257F /* SwiftCXHubWidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5EBA925061C7E0047257F /* SwiftCXHubWidgetExtension.swift */; };
 		9CE5EBAD25061C7F0047257F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE5EBAC25061C7F0047257F /* Assets.xcassets */; };
-		9CE5EBAF25061C7F0047257F /* SwiftCXHubWidgetExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5EBAB25061C7E0047257F /* SwiftCXHubWidgetExtension.intentdefinition */; };
-		9CE5EBB025061C7F0047257F /* SwiftCXHubWidgetExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5EBAB25061C7E0047257F /* SwiftCXHubWidgetExtension.intentdefinition */; };
 		9CE5EBB325061C7F0047257F /* SwiftCXHubWidgetExtensionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CE5EBA325061C7E0047257F /* SwiftCXHubWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CE5EBDF250760750047257F /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5EBDB25075F8A0047257F /* SmallWidget.swift */; };
 		9CE5EBE0250760780047257F /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5EBDD250760200047257F /* MediumWidget.swift */; };
@@ -183,7 +181,6 @@
 		9CE5EBA425061C7E0047257F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9CE5EBA625061C7E0047257F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		9CE5EBA925061C7E0047257F /* SwiftCXHubWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCXHubWidgetExtension.swift; sourceTree = "<group>"; };
-		9CE5EBAB25061C7E0047257F /* SwiftCXHubWidgetExtension.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SwiftCXHubWidgetExtension.intentdefinition; sourceTree = "<group>"; };
 		9CE5EBAC25061C7F0047257F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CE5EBAE25061C7F0047257F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CE5EBB425061C810047257F /* SwiftCXHubWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCXHubWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
@@ -429,7 +426,6 @@
 				9CE5EBDB25075F8A0047257F /* SmallWidget.swift */,
 				9CE5EBDD250760200047257F /* MediumWidget.swift */,
 				9CA8B0592509CB16001D50C9 /* LargeWidget.swift */,
-				9CE5EBAB25061C7E0047257F /* SwiftCXHubWidgetExtension.intentdefinition */,
 				9CE5EBAC25061C7F0047257F /* Assets.xcassets */,
 				9CE5EBAE25061C7F0047257F /* Info.plist */,
 			);
@@ -672,7 +668,6 @@
 				9C9E59852501D78200495DCB /* DiscoverListPage.swift in Sources */,
 				9CB1230624F6530200AA2E41 /* RepoEventsListPage.swift in Sources */,
 				9C87F43824E38CC30057A279 /* User+API.swift in Sources */,
-				9CE5EBB025061C7F0047257F /* SwiftCXHubWidgetExtension.intentdefinition in Sources */,
 				9CF3A4B424E677F80025AEBE /* Author.swift in Sources */,
 				9C87F43E24E4E7570057A279 /* NetworkError.swift in Sources */,
 				9C20A70C24EE60FA003F737F /* RepoManager.swift in Sources */,
@@ -717,7 +712,6 @@
 				9C66CC252509C111002AE545 /* Author.swift in Sources */,
 				9C66CC2F2509C111002AE545 /* Payload.swift in Sources */,
 				9C66CC372509C111002AE545 /* Parent.swift in Sources */,
-				9CE5EBAF25061C7F0047257F /* SwiftCXHubWidgetExtension.intentdefinition in Sources */,
 				9C66CC212509C111002AE545 /* Readme.swift in Sources */,
 				9C66CC2C2509C111002AE545 /* Actor.swift in Sources */,
 				9C66CC202509C111002AE545 /* License.swift in Sources */,
@@ -859,6 +853,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -867,7 +862,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.SwiftCXHub;
+				MARKETING_VERSION = 1.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub;
 				PRODUCT_NAME = SwiftCXHub;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -889,6 +885,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -897,7 +894,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.SwiftCXHub;
+				MARKETING_VERSION = 1.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub;
 				PRODUCT_NAME = SwiftCXHub;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -918,6 +916,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = SwiftCXHubWidgetExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -926,7 +925,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.SwiftCXHub.SwiftCXHubWidgetExtension;
+				MARKETING_VERSION = 1.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub.SwiftCXHubWidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -945,6 +945,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = SwiftCXHubWidgetExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -953,7 +954,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.SwiftCXHub.SwiftCXHubWidgetExtension;
+				MARKETING_VERSION = 1.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub.SwiftCXHubWidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

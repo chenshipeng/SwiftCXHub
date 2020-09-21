@@ -39,31 +39,28 @@ struct CurrentUserReceivedEventsListPage: View {
     @State var page = 1
     @EnvironmentObject var auth:AuthClient
     @EnvironmentObject var currentUser:CurrentUserStore
-    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State var repoDetailActive = false
     var body: some View {
         NavigationView{
-            ZStack{
-                List{
-                    if currentUser.username.count > 0,let events = currentUser.userEvents[currentUser.username]{
-                        ForEach(events){event in
-                            NavigationLink(destination:RepoDetailPage(repoUrl: event.repo!.url!)){
-                                VStack{
-                                    makeUserEventCell(event)
-                                        .padding()
-                                }
-                                
+            List{
+                if currentUser.username.count > 0,let events = currentUser.userEvents[currentUser.username]{
+                    ForEach(events){event in
+                        NavigationLink(destination:RepoDetailPage(repoUrl: event.repo!.url!)){
+                            VStack{
+                                makeUserEventCell(event)
+                                    .padding()
                             }
+                            
                         }
-                    } 
+                    }
                 }
-                .background(Color.clear)
-                .animation(.interactiveSpring())
-                .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle(Text("Events"))
-            }  
+            }
+            .background(Color.clear)
+            .animation(.interactiveSpring())
+            .listStyle(InsetGroupedListStyle())
+            .navigationBarTitle(Text("Events"))
         }
-        
     }
 }
 

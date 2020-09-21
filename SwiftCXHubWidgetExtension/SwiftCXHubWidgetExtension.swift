@@ -27,17 +27,20 @@ func getPersistData() -> UserStoreModel?{
     
     return nil
 }
-struct Provider: IntentTimelineProvider {
+struct Provider: TimelineProvider {
+    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        completion(SimpleEntry(date: Date(),trending:[Trending.staticTrending()]))
+    }
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(),trending:[Trending.staticTrending()])
+        SimpleEntry(date: Date(),trending:[Trending.staticTrending()])
     }
+//    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+//        let entry = SimpleEntry(date: Date(),trending:[Trending.staticTrending()])
+//        completion(entry)
+//    }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration,trending:[Trending.staticTrending()])
-        completion(entry)
-    }
-
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
         let currentDate = Date()
         if let data = getPersistData(),let trendings = data.trendings?.first?.value,trendings.count > 0{
@@ -47,7 +50,7 @@ struct Provider: IntentTimelineProvider {
                 print("start trendings \(tres.count)")
                 let slicedTrendins = tres.prefix(3)
                 let entryDate = Calendar.current.date(byAdding: .minute, value: i, to: currentDate)!
-                let entry = SimpleEntry(date: entryDate, configuration: configuration,trending:Array(slicedTrendins))
+                let entry = SimpleEntry(date: entryDate,trending:Array(slicedTrendins))
                 entries.append(entry)
                 tres = Array(tres.dropFirst(3))
                 print("end trendings \(tres.count)")
@@ -60,7 +63,7 @@ struct Provider: IntentTimelineProvider {
         
         for hourOffset in 0 ..< 24 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration,trending:[Trending.staticTrending()])
+            let entry = SimpleEntry(date: entryDate,trending:[Trending.staticTrending()])
             
             entries.append(entry)
         }
@@ -72,7 +75,7 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+//    let configuration: ConfigurationIntent
     let trending:[Trending]
 }
 struct SwiftCXHubWidgetExtensionEntryView : View {
@@ -98,9 +101,9 @@ struct SwiftCXHubWidgetExtensionEntryView : View {
 struct SwiftCXHubWidgetExtension: Widget {
     let kind: String = "SwiftCXHubWidgetExtension"
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider(), content: {entry in
             SwiftCXHubWidgetExtensionEntryView(entry: entry)
-        }
+        })
         .configurationDisplayName("SwiftCXHub Widget")
         .description("Add SwiftCXHub Widget")
         .supportedFamilies([.systemSmall,.systemMedium,.systemLarge])
@@ -110,11 +113,11 @@ struct SwiftCXHubWidgetExtension: Widget {
 struct SwiftCXHubWidgetExtension_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), trending: [Trending.staticTrending()]))
+            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), trending: [Trending.staticTrending()]))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
-            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), trending: [Trending.staticTrending()]))
+            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), trending: [Trending.staticTrending()]))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), trending: [Trending.staticTrending(),Trending.staticTrending(),Trending.staticTrending()]))
+            SwiftCXHubWidgetExtensionEntryView(entry: SimpleEntry(date: Date(), trending: [Trending.staticTrending(),Trending.staticTrending(),Trending.staticTrending()]))
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
         }
     }

@@ -14,13 +14,20 @@ struct MyProfilePage: View {
     @State var url:String = "https://github.com/chenshipeng?tab=repositories"
     var body: some View {
         NavigationView{
-            ZStack(alignment:.center){
+            ZStack(alignment:.topLeading){
                 
-                VStack(alignment:.center){
+                VStack(alignment:.leading){
+                    Text("Chenshipeng")
+                        .font(.headline)
+                        .padding(.top,10)
+                        .padding(.bottom,10)
                     Text("A iOSer,and recently learning Flutter and SwiftUI,also like Design.")
+                        .foregroundColor(Color(UIColor.secondaryLabel))
                         .lineLimit(3)
                         .font(.system(size: 17))
-                        .padding(.top,60)
+                        .padding(.bottom,10)
+                    Text("Github:")
+                        .padding(.bottom,1)
                     HStack{
                         Button(action:{
                             url = "https://github.com/chenshipeng?tab=repositories"
@@ -28,23 +35,22 @@ struct MyProfilePage: View {
                         }){
                             Image("github60")
                                 .frame(width:30,height: 30)
-                                .padding()
+                                .padding(.top,5)
                         }
                         
-                    }
-                    Spacer()
+                    }.padding(.bottom,1)
                     HStack(alignment:.bottom){
                         Button(action:{
                             url = "https://apps.apple.com/us/app/cxhub-for-github/id1437613635?l=zh&ls=1"
                             showSheet.toggle()
                         }){
-                            Text("APP Download")
+                            Text("App Download")
                                 .foregroundColor(.blue)
                                 .font(.system(size: 15))
                                 .underline()
                         }
                     }
-                    .padding()
+                    
                 }
                 .frame(width:300,height:300)
                 .background(Color(UIColor.secondarySystemBackground))
@@ -58,16 +64,14 @@ struct MyProfilePage: View {
                         .cornerRadius(30)
                         .background(RoundedRectangle(cornerRadius: 30)
                                         .stroke(Color.purple))
-                        .padding(.leading,20)
-                        .offset(x: 90, y: -150)
+                        .offset(x: 120, y: -30)
                         .shadow(radius: 30)
                 }else{
                     Circle()
                         .frame(width:60,height:60)
                         .background(RoundedRectangle(cornerRadius: 30)
                                         .stroke(Color.purple))
-                        .padding(.leading,30)
-                        .offset(x:90, y: -150)
+                        .offset(x:120, y: -30)
                         .shadow(radius: 30)
                 }
                 

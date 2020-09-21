@@ -14,16 +14,50 @@ import Combine
 struct SwiftCXHubApp: App {
     @StateObject private var authClient = AuthClient.shared
     @StateObject private var uiState = UIState()
+    @Environment (\.horizontalSizeClass) var horizontalSizeClass
     var body: some Scene {
         WindowGroup {
+            #if os(iOS)
             TabbarView()
             .environmentObject(uiState)
             .environmentObject(AuthClient.shared)
             .environmentObject(CurrentUserStore.shared)
             .environmentObject(RepoManager.shared)
             .sheet(item: $uiState.presentedRoute, content: {$0.makeSheet()})
+            #else
+            SideBarView()
+                .environmentObject(uiState)
+                .environmentObject(AuthClient.shared)
+                .environmentObject(CurrentUserStore.shared)
+                .environmentObject(RepoManager.shared)
+                .sheet(item: $uiState.presentedRoute, content: {$0.makeSheet()})
+            #endif
+            
         }
     }
+}
+struct SideBarView:View {
+    var body: some View{
+        NavigationView{
+            List{
+                NavigationLink(destination:CurrentUserReceivedEventsListPage()){
+                    Label("Events", systemImage: "list.bullet.rectangle")
+                }
+                NavigationLink(destination: DiscoverListPage(), label: {
+                    Label("Discovery", systemImage: "flame")
+                })
+                NavigationLink(destination: MyRepoListPage(), label: {
+                    Label("Repos", systemImage: "tray.circle")
+                })
+                NavigationLink(destination: MyProfilePage(), label: {
+                    Label("About Me", systemImage: "person.circle")
+                })
+                
+            }
+            .listStyle(SidebarListStyle())
+        }
+    }
+    
 }
 struct TabbarView:View {
     enum Tab:Int {
